@@ -5,6 +5,8 @@ import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 
+import org.apache.logging.log4j.Logger;
+
 // import com.badlogic.gdx.Files;
 // import com.badlogic.gdx.Gdx;
 // import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
@@ -43,8 +45,10 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 )
 
 public class ActNumber {
-    public static void Postfix(TopPanel __instance, SpriteBatch sb) {
-        sb.draw(ImageMaster.TP_FLOOR, 200, 200, 200, 200);
+    public static void Postfix(TopPanel __instance, SpriteBatch sb, float __floorX, float __ICON_Y, float __ICON_W, Logger __logger) {
+        __logger.debug("Testing lasse plugin");
+        __logger.debug("Vals: " + __floorX + ", " + __ICON_Y + ", " + __ICON_W);
+        sb.draw(ImageMaster.TP_FLOOR, 200, __ICON_Y, __ICON_W, __ICON_W);
     }
 }
 // public class ActNumber implements
